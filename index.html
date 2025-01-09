@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprender a Programar: HTML, PHP y MySQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        pre {
+            background-color: #333;
+            color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+        .buttons button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .buttons button:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .image-container img {
+            width: 30%; /* Tamaño reducido de las imágenes */
+            border-radius: 8px;
+        }
+        /* Nuevas reglas para alinear los formularios lado a lado */
+        .form-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        form {
+            width: 45%;
+        }
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+        }
+        form input[type="submit"] {
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        form input[type="submit"]:hover {
+            background-color: #ddd;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aprende a Programar en HTML, PHP y MySQL</h1>
+        <p>Un manual informativo para iniciarte en la programación web</p>
+    </header>
+
+    <!-- Barra de navegación superior -->
+    <nav>
+        <ul>
+            <li><a href="consulta_usuarios.php">Consultar Usuarios</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="registro">
+            <h2>Formulario de Registro y Login</h2>
+            <div class="form-container">
+                <!-- Formulario de Registro -->
+                <form action="registrar_usuario.php" method="POST">
+                    <h3>Registro</h3>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required><br><br>
+                    
+                    <label for="correo">Correo:</label>
+                    <input type="email" id="correo" name="correo" required><br><br>
+                    
+                    <label for="carrera">Carrera:</label>
+                    <input type="text" id="carrera" name="carrera"><br><br>
+                    
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" name="contrasena" required><br><br>
+                    
+                    <input type="submit" value="Registrar">
+                </form>
+
+                <!-- Formulario de Login -->
+                <form action="login.php" method="POST">
+                    <h3>Iniciar Sesión</h3>
+                    <label for="correo_login">Correo:</label>
+                    <input type="email" id="correo_login" name="correo" required><br><br>
+                    
+                    <label for="contrasena_login">Contraseña:</label>
+                    <input type="password" id="contrasena_login" name="contrasena" required><br><br>
+                    
+                    <input type="submit" value="Iniciar sesión">
+                </form>
+            </div>
+        </section>
+
+        <!-- Botones en la parte superior derecha -->
+        <div class="buttons">
+            <button onclick="window.location.href='temas_html.html'">Ir a HTML</button>
+            <button onclick="window.location.href='temas_php.html'">Ir a PHP</button>
+        </div>
+
+        <section id="html">
+            <h2>¿Qué es HTML?</h2>
+            <p>HTML (HyperText Markup Language) es el lenguaje de marcado estándar para crear páginas web. Es la estructura básica de cualquier página en la web.</p>
+
+            <div class="image-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML Logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Etiquetas_en_HTML.png" alt="Ejemplo de Código HTML">
+            </div>
+
+            <h3>Ejemplo Básico de HTML</h3>
+            <pre>
+                &lt;!DOCTYPE html&gt;
+                &lt;html lang="es"&gt;
+                    &lt;head&gt;
+                        &lt;meta charset="UTF-8"&gt;
+                        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                        &lt;title&gt;Mi primera página web&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;h1&gt;Hola Mundo&lt;/h1&gt;
+                        &lt;p&gt;Este es un párrafo en mi primera página HTML.&lt;/p&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+            </pre>
+        </section>
+
+        <section id="php">
+            <h2>¿Qué es PHP?</h2>
+            <p>PHP (Hypertext Preprocessor) es un lenguaje de programación de uso general que se usa principalmente para desarrollar aplicaciones web dinámicas. PHP se ejecuta en el servidor.</p>
+
+            <div class="image-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Codigo_php.jpg" alt="PHP Logo">
+                <img src="https://www.php.net/images/logos/php-logo.svg" alt="PHP Logo">
+            </div>
+
+            <h3>Ejemplo Básico de PHP</h3>
+            <pre>
+                &lt;?php
+                echo "Hola Mundo desde PHP";
+                ?&gt;
+            </pre>
+            <p>Este código muestra cómo imprimir "Hola Mundo" en la página web utilizando PHP.</p>
+        </section>
+
+        <section id="mysql">
+            <h2>¿Qué es MySQL?</h2>
+            <p>MySQL es un sistema de gestión de bases de datos relacional basado en SQL (Structured Query Language). Es uno de los sistemas de bases de datos más populares para aplicaciones web.</p>
+
+            <div class="image-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Mysql-screenshot.PNG" alt="MySQL Logo">
+                <img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png" alt="Logo de MySQL">
+            </div>
+
+            <h3>Conectando PHP con MySQL</h3>
+            <pre>
+                &lt;?php
+                // Conexión a la base de datos
+                $conexion = new mysqli("localhost", "usuario", "contraseña", "base_de_datos");
+                
+                if ($conexion->connect_error) {
+                    die("Conexión fallida: " . $conexion->connect_error);
+                }
+                echo "Conectado correctamente a la base de datos";
+                
+                // Consulta
+                $sql = "SELECT id, nombre FROM tabla";
+                $resultado = $conexion->query($sql);
+                
+                if ($resultado->num_rows > 0) {
+                    while($row = $resultado->fetch_assoc()) {
+                        echo "id: " . $row["id"]. " - Nombre: " . $row["nombre"]. "&lt;br&gt;";
+                    }
+                } else {
+                    echo "0 resultados";
+                }
+                $conexion->close();
+                ?&gt;
+            </pre>
+            <p>Este es un ejemplo básico de cómo conectar PHP a una base de datos MySQL y realizar una consulta.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2025 Aprende a Programar con el profe MISAEL - Todos los derechos reservados de ARELI.</p>
+    </footer>
+</body>
+</html>
